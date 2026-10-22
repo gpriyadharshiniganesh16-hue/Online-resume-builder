@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Online Resume Builder</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <h1>Online Resume Builder</h1>
+  <p>Enter your details, preview your resume live, and print or save it as PDF.</p>
+</header>
+
+<main class="layout">
+
+<section class="panel form-panel">
+<h2>Resume details</h2>
+<div id="errorBox" class="error" role="alert"></div>
+
+<form id="resumeForm" novalidate>
+
+<div class="section personal">
+<h3>Personal & professional information</h3>
+<div class="grid">
+
+<div class="field">
+<label for="name">Full name *</label>
+<input id="name" name="name" required placeholder="e.g. Priya Kumar">
+</div>
+
+<div class="field">
+<label for="role">Professional title</label>
+<input id="role" name="role" placeholder="e.g. Computer Science Student">
+</div>
+
+<div class="field">
+<label for="email">Email *</label>
+<input id="email" name="email" type="email" required placeholder="you@example.com">
+</div>
+
+<div class="field">
+<label for="phone">Phone</label>
+<input id="phone" name="phone" type="tel" placeholder="Phone number">
+</div>
+
+<div class="field">
+<label for="location">Location</label>
+<input id="location" name="location" placeholder="City, State">
+</div>
+
+<div class="field">
+<label for="linkedin">LinkedIn / portfolio</label>
+<input id="linkedin" name="linkedin" placeholder="Profile URL">
+</div>
+
+<div class="field full">
+<label for="summary">Professional summary</label>
+<textarea id="summary" name="summary" placeholder="Write about your strengths and career goal"></textarea>
+</div>
+
+</div>
+</div>
+
+<div class="section">
+<h3>Education</h3>
+<div id="educationList"></div>
+<button type="button" class="btn secondary" id="addEducation">+ Add education</button>
+</div>
+
+<div class="section">
+<h3>Skills</h3>
+<div id="skillsList"></div>
+<button type="button" class="btn secondary" id="addSkill">+ Add skill</button>
+<p class="hint">Add multiple skills. They appear in the preview automatically.</p>
+</div>
+
+<div class="section">
+<h3>Projects</h3>
+<div id="projectsList"></div>
+<button type="button" class="btn secondary" id="addProject">+ Add project</button>
+</div>
+
+<div class="section">
+<h3>Experience (optional)</h3>
+<div id="experienceList"></div>
+<button type="button" class="btn secondary" id="addExperience">+ Add experience</button>
+</div>
+
+<div class="section">
+<h3>Template</h3>
+<div class="field">
+<label for="template">Choose resume style</label>
+<select id="template">
+<option value="modern">Modern blue</option>
+<option value="classic">Classic</option>
+<option value="minimal">Minimal</option>
+</select>
+</div>
+</div>
+
+<div class="section actions">
+<button type="submit" class="btn primary">Validate & update preview</button>
+<button type="button" class="btn secondary" id="saveBtn">Save data</button>
+<button type="button" class="btn secondary" id="loadBtn">Load saved data</button>
+<button type="button" class="btn danger" id="clearBtn">Clear form</button>
+</div>
+
+</form>
+</section>
+
+<section class="panel preview-panel">
+
+<div class="preview-toolbar">
+<h2>Live resume preview</h2>
+<button class="btn primary" id="downloadBtn">Print / Save PDF</button>
+</div>
+
+<div id="resumePreview" class="resume modern" aria-live="polite"></div>
+
+<p class="hint no-print">
+Choose "Save as PDF" in the browser's print dialog to save your resume.
+</p>
+
+</section>
+</main>
+
+<script src="script.js" defer></script>
+</body>
+</html>
